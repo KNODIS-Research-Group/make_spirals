@@ -1,5 +1,5 @@
 import numpy as np
-import sklearn.utils
+from sklearn import utils
 import math
  
 def make_spirals(n_samples=500, n_classes=2, shuffle=True, noise=1, n_loops=2, 
@@ -49,7 +49,7 @@ def make_spirals(n_samples=500, n_classes=2, shuffle=True, noise=1, n_loops=2,
     y = np.hstack((y, np.array([i]*n_samples_per_class)))
  
   if shuffle:
-    X, y = sklearn.utils.shuffle(X, y, random_state=random_state)
+    X, y = utils.shuffle(X, y, random_state=random_state)
 
   X = X[0:n_samples,:]
   y = y[0:n_samples]
